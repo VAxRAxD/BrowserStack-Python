@@ -2,6 +2,7 @@ import os, json
 from dotenv import load_dotenv
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options as ChromeOptions
+from percy.snapshot import percy_snapshot
 
 load_dotenv()
 BROWSERSTACK_USERNAME = os.environ.get("BROWSERSTACK_USERNAME")
@@ -25,6 +26,8 @@ browser = webdriver.Remote(
     command_executor="https://hub.browserstack.com/wd/hub",
     options=options)
 try:
+    browser.get('https://vaxraxd.github.io/BrowserStack/')
+    percy_snapshot(browser, 'Homepage')
     browser.execute_script(
         'browserstack_executor: {"action": "setSessionStatus", "arguments": {"status":"passed", "reason": "Successfully Verified!"}}')
 except Exception as err:
