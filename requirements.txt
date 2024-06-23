@@ -1,0 +1,6 @@
+Appium-Python-Client
+browserstack-local
+browserstack_sdk
+percy-selenium
+python-dotenv
+selenium
