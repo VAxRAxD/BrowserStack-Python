@@ -7,7 +7,7 @@ from percy.snapshot import percy_snapshot
 load_dotenv()
 BROWSERSTACK_USERNAME = os.environ.get("BROWSERSTACK_USERNAME")
 BROWSERSTACK_ACCESS_KEY = os.environ.get("BROWSERSTACK_ACCESS_KEY")
-URL = os.environ.get("URL") or "https://hub.browserstack.com/wd/hub"
+URL = os.environ.get("URL")
 
 bstack_options = {
     "osVersion" : "14",
@@ -22,9 +22,7 @@ bstack_options = {
 bstack_options["source"] = "python:sample-main:v1.0"
 options = ChromeOptions()
 options.set_capability('bstack:options', bstack_options)
-browser = webdriver.Remote(
-    command_executor="https://hub.browserstack.com/wd/hub",
-    options=options)
+browser = webdriver.Remote(URL, options=options)
 try:
     browser.get('https://vaxraxd.github.io/BrowserStack/')
     percy_snapshot(browser, 'Homepage')
