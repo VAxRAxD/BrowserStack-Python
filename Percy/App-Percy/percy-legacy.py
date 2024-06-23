@@ -10,7 +10,7 @@ from dotenv import load_dotenv
 load_dotenv()
 BROWSERSTACK_USERNAME = os.environ.get("BROWSERSTACK_USERNAME")
 BROWSERSTACK_ACCESS_KEY = os.environ.get("BROWSERSTACK_ACCESS_KEY")
-URL = os.environ.get("URL")
+URL = os.environ.get("URL") 
 
 options = UiAutomator2Options().load_capabilities({
     "platformName" : "android",

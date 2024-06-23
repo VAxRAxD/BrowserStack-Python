@@ -1,32 +1,14 @@
-from pydoc import describe
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.options import Options as ChromeOptions
-from dotenv import load_dotenv
-import os, json
+import json
 
-load_dotenv()
-BROWSERSTACK_USERNAME = os.environ.get("BROWSERSTACK_USERNAME")
-BROWSERSTACK_ACCESS_KEY = os.environ.get("BROWSERSTACK_ACCESS_KEY")
-URL = os.environ.get("URL")
-
-bstack_options = {
-    "osVersion" : "14",
-	"deviceName" : "iPhone 12",
-    "browserName" : "Chrome",
-    "buildName" : "browserstack-build-13",
-    "sessionName" : "BStack single python",
-    "userName": BROWSERSTACK_USERNAME,
-    "accessKey": BROWSERSTACK_ACCESS_KEY,
-}
-
-bstack_options["source"] = "python:sample-main:v1.0"
 options = ChromeOptions()
-options.set_capability('bstack:options', bstack_options)
+options.set_capability('sessionName', 'BStack Sample Test')
+driver = webdriver.Chrome(options=options)
 
-driver=webdriver.Remote(URL, options=options)
 try:
     driver.get('https://bstackdemo.com/')
     driver.find_element(By.ID,'offers').click()
