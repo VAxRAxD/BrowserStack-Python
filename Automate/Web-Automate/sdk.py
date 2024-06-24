@@ -11,20 +11,26 @@ driver = webdriver.Chrome(options=options)
 
 try:
     driver.get('https://bstackdemo.com/')
-    driver.find_element(By.ID,'offers').click()
-    driver.execute_script('navigator.geolocation.getCurrentPosition = function(success){ var position = { "coords":{"latitude":"19.0760","longitude":"72.8777"}}; success(position);}')
+    driver.implicitly_wait(10)
+    driver.find_element(By.ID,'signin').click()
     WebDriverWait(driver, 20).until(EC.visibility_of_element_located((By.CSS_SELECTOR, '#username input')))
     username = driver.find_element(By.CSS_SELECTOR, "#username input")
     username.send_keys("fav_user\n")
     WebDriverWait(driver, 20).until(EC.visibility_of_element_located((By.CSS_SELECTOR, '#password input')))
     password = driver.find_element(By.CSS_SELECTOR, "#password input")
     password.send_keys("testingisfun99\n")
-    WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.ID, 'login-btn')))
-    driver.find_element(By.ID, "login-btn").click()
-    WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.ID, 'offers')))
-    driver.find_element(By.ID, "offers").click()
-    desired="We've promotional offers in your location."
-    if driver.find_element(By.XPATH,'//*[@id="__next"]/main/div/div/div[1]').text==desired:
+    driver.find_element(By.ID,'login-btn').click()
+    WebDriverWait(driver,20).until(EC.visibility_of_element_located((By.XPATH,'//*[@id="1"]/div[4]')))
+    driver.find_element(By.XPATH,'//*[@id="1"]/div[4]').click()
+    driver.find_element(By.XPATH,'//*[@id="__next"]/div/div/div[2]/div[2]/div[3]/div[3]').click()
+    WebDriverWait(driver,20).until(EC.visibility_of_element_located((By.ID,'firstNameInput')))
+    driver.find_element(By.ID,'firstNameInput').send_keys('Varad')
+    driver.find_element(By.ID,'lastNameInput').send_keys('Prabhu')
+    driver.find_element(By.ID,'addressLine1Input').send_keys("Dadar")
+    driver.find_element(By.ID,'provinceInput').send_keys("Maharashtra")
+    driver.find_element(By.ID,'postCodeInput').send_keys('400028')
+    driver.find_element(By.ID,'checkout-shipping-continue').click()
+    if driver.find_element(By.ID,'confirmation-message').text=="Your Order has been successfully placed.":
         driver.execute_script(
             'browserstack_executor: {"action": "setSessionStatus", "arguments": {"status":"passed", "reason": "Successfully Verified!"}}')
     else:
