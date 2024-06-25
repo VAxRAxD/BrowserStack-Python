@@ -2,5 +2,6 @@ Appium-Python-Client
 browserstack-local
 browserstack-sdk
 percy-selenium
+pytest-playwright
 python-dotenv
 selenium
