@@ -35,7 +35,7 @@ try:
             'browserstack_executor: {"action": "setSessionStatus", "arguments": {"status":"passed", "reason": "Successfully Verified!"}}')
     else:
         driver.execute_script(
-            'browserstack_executor: {"action": "setSessionStatus", "arguments": {"status":"failed", "reason": "Offers cannot be verified!"}}')
+            'browserstack_executor: {"action": "setSessionStatus", "arguments": {"status":"failed", "reason": "Orders cannot be verified!"}}')
 except Exception as err:
     message = "Exception: " + str(err.__class__) + str(err.msg)
     driver.execute_script(
