@@ -24,7 +24,7 @@ options = ChromeOptions()
 options.set_capability('bstack:options', bstack_options)
 browser = webdriver.Remote(URL, options=options)
 try:
-    browser.get('https://vaxraxd.github.io/BrowserStack/')
+    browser.get('https://vaxraxd.github.io/BrowserStack-Python/')
     percy_snapshot(browser, 'Homepage')
     browser.execute_script(
         'browserstack_executor: {"action": "setSessionStatus", "arguments": {"status":"passed", "reason": "Successfully Verified!"}}')
