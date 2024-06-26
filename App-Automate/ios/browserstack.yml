@@ -1,10 +1,10 @@
 userName: ${BROWSERSTACK_USERNAME}
 accessKey: ${BROWSERSTACK_ACCESS_KEY}
-app: "bs://85e577c7635c44fcb39b3c3985a6fd6d72139651"
+app: "bs://03193f5cb399d54556143b06989d98692a1314ec"
 platforms:
-  - platformName: android
-    deviceName: Google Pixel 3
-    platformVersion: '9.0'
+  - platformName: ios
+    deviceName: iPhone 13
+    platformVersion: 15
 parallelsPerPlatform: 1
 buildName: browserstack-build-15
 projectName: BrowserStack vaxraxd

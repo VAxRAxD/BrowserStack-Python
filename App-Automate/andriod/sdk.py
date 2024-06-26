@@ -1,4 +1,4 @@
-import os,time
+import time
 from appium import webdriver
 from appium.options.android import UiAutomator2Options
 from appium.webdriver.common.appiumby import AppiumBy
