@@ -1,4 +1,4 @@
-import re, json
+import re
 from playwright.sync_api import Page
 
 def test_example(page: Page) -> None:
