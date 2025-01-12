@@ -1,0 +1,7 @@
+userName: ${BROWSERSTACK_USERNAME}
+accessKey: ${BROWSERSTACK_ACCESS_KEY}
+app: #specify app url
+platforms:
+  - platformName: android
+    deviceName: Google Pixel 6 Pro
+    platformVersion: '15.0'

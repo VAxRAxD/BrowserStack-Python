@@ -1,0 +1,6 @@
+version: 2
+snapshot:
+  enableJavaScript: true
+discovery:
+  networkIdleTimeout: 750
+  captureSrSet: true

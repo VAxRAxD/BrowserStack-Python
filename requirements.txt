@@ -1,0 +1,12 @@
+Appium-Python-Client
+browserstack-local
+browserstack-sdk
+percy-selenium
+playwright
+pytest
+pytest-playwright
+pytest-variables
+pytest-xdist
+pytest-base-url
+python-dotenv
+selenium

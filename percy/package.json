@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "@percy/cli": "^1.29.1",
+    "@percy/playwright": "^1.0.6"
+  }
+}
