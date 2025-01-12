@@ -14,13 +14,12 @@ URL = os.environ.get("URL")
 
 options = UiAutomator2Options().load_capabilities({
     "platformName" : "android",
-    "platformVersion" : "9.0",
-    "deviceName" : "Google Pixel 3",
-    "app" : "bs://85e577c7635c44fcb39b3c3985a6fd6d72139651",
+    "platformVersion" : "15.0",
+    "deviceName" : "Google Pixel 6 Pro",
+    "app" : "", #specify app url
     'bstack:options' : {
-        "projectName" : "Andriod App Automate project",
-        "buildName" : "browserstack-build-12",
-        "sessionName" : "BStack app_auto_test",
+        "buildName" : "VAxRAxD",
+        "sessionName" : "Sample App Percy Legacy Test",
         "userName" : BROWSERSTACK_USERNAME,
         "accessKey" : BROWSERSTACK_ACCESS_KEY,
     }
