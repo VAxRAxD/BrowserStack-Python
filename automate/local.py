@@ -1,7 +1,4 @@
 from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.options import Options as ChromeOptions
 from dotenv import load_dotenv
 import os, json, time
@@ -20,8 +17,8 @@ bstack_options = {
     "os" : "Windows",
     "osVersion" : "10",
     "browserName" : "Chrome",
-    "buildName" : "browserstack-build-13",
-    "sessionName" : "BStack local python",
+    "buildName" : "VAxRAxD",
+    "sessionName" : "Sample Browser Local Test",
     "userName": BROWSERSTACK_USERNAME,
     "accessKey": BROWSERSTACK_ACCESS_KEY,
     "local": "true"
