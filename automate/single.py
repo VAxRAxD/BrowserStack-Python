@@ -24,6 +24,7 @@ bstack_options = {
 bstack_options["source"] = "python:sample-main:v1.0"
 options = ChromeOptions()
 options.set_capability('bstack:options', bstack_options)
+options.set_capability('appium:nativeWebTap', "true")
 
 driver=webdriver.Remote(URL, options=options)
 try:

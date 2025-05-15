@@ -21,7 +21,8 @@ bstack_options = {
     "sessionName" : "Sample Browser Local Test",
     "userName": BROWSERSTACK_USERNAME,
     "accessKey": BROWSERSTACK_ACCESS_KEY,
-    "local": "true"
+    "local": "true",
+    "interactiveDebugging": "true"
 }
 
 bstack_options["source"] = "python:sample-main:v1.0"
@@ -30,8 +31,7 @@ options.set_capability('bstack:options', bstack_options)
 
 driver=webdriver.Remote(URL, options=options)
 try:
-    driver.get('http://127.0.0.1:5000/')
-    time.sleep(15)
+    driver.get('http://127.0.0.1:5001/')
     driver.execute_script(
         'browserstack_executor: {"action": "setSessionStatus", "arguments": {"status":"passed", "reason": "Successfully Verified!"}}')
 except Exception as err:

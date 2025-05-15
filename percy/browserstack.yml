@@ -1,0 +1,7 @@
+userName:
+accessKey:
+platforms:
+  - browserName: Chrome
+    os: Windows
+    osVersion: 11
+    browserVersion: 131

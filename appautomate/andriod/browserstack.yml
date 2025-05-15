@@ -3,5 +3,5 @@ accessKey: ${BROWSERSTACK_ACCESS_KEY}
 app: #specify app url
 platforms:
   - platformName: android
-    deviceName: Google Pixel 6 Pro
-    platformVersion: '15.0'
+    deviceName: Google Pixel 8
+    platformVersion: '14.0'

@@ -13,8 +13,8 @@ URL = os.environ.get("URL")
 
 options = UiAutomator2Options().load_capabilities({
     "platformName" : "android",
-    "platformVersion" : "15.0",
-    "deviceName" : "Google Pixel 6 Pro",
+    "platformVersion" : "14.0",
+    "deviceName" : "Google Pixel 8",
     "app" : "", #specify app url
     'bstack:options' : {
         "buildName" : "VAxRAxD",
@@ -26,7 +26,6 @@ options = UiAutomator2Options().load_capabilities({
 
 driver = webdriver.Remote(URL, options=options)
 try:
-    time.sleep(20)
     filter=WebDriverWait(driver, 30).until(EC.element_to_be_clickable((AppiumBy.ACCESSIBILITY_ID, "filter-btn")))
     filter.click()
     phone=WebDriverWait(driver, 30).until(EC.element_to_be_clickable((AppiumBy.ANDROID_UIAUTOMATOR, "new UiSelector().text(\"Samsung\")")))

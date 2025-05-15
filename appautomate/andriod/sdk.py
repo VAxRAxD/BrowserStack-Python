@@ -5,11 +5,15 @@ from appium.webdriver.common.appiumby import AppiumBy
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-bstack_options = {
-    "buildName" : "VAxRAxD",
-    "sessionName" : "Sample Android SDK Test",
-}
-options = UiAutomator2Options().set_capability('bstack:options', bstack_options)
+options = UiAutomator2Options().load_capabilities({
+    "appium:appiumSettings": {
+        "waitForIdleTimeout": 100,
+    },
+    'bstack:options' : {
+        "buildName" : "VAxRAxD",
+        "sessionName" : "Sample Android SDK Test",
+    }
+})
 
 driver = webdriver.Remote(options=options)
 try:

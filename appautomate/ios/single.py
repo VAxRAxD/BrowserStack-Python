@@ -26,7 +26,6 @@ options = XCUITestOptions().load_capabilities({
 
 driver = webdriver.Remote(URL, options=options)
 try:
-    time.sleep(10)
     WebDriverWait(driver, 30).until(EC.element_to_be_clickable((AppiumBy.ACCESSIBILITY_ID, "Text Button"))).click()
     WebDriverWait(driver, 30).until(EC.element_to_be_clickable((AppiumBy.ACCESSIBILITY_ID, "Text Input"))).click()
     WebDriverWait(driver, 30).until(EC.element_to_be_clickable((AppiumBy.ACCESSIBILITY_ID, "Text Input"))).send_keys("Varad")

@@ -1,6 +1,7 @@
 version: 2
 snapshot:
+  widths:
+  - 1920
   enableJavaScript: true
 discovery:
   networkIdleTimeout: 750
-  captureSrSet: true

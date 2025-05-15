@@ -2,7 +2,7 @@ import os, json
 from dotenv import load_dotenv
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options as ChromeOptions
-from percy.snapshot import percy_snapshot
+from percy import percy_screenshot
 
 load_dotenv()
 BROWSERSTACK_USERNAME = os.environ.get("BROWSERSTACK_USERNAME")
@@ -26,7 +26,7 @@ options.set_capability('bstack:options', bstack_options)
 browser = webdriver.Remote(URL, options=options)
 try:
     browser.get('https://stackoverflow.com/')
-    percy_snapshot(browser, 'Homepage')
+    percy_screenshot(browser, 'Homepage', enableLayout=True)
     browser.execute_script(
         'browserstack_executor: {"action": "setSessionStatus", "arguments": {"status":"passed", "reason": "Successfully Verified!"}}')
 except Exception as err:
